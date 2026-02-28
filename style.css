@@ -1,0 +1,83 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f7f7fb;
+  --text: #1f2430;
+  --card: #ffffff;
+  --accent: #5b7cfa;
+}
+
+body.dark {
+  --bg: #0f1220;
+  --text: #e8ebf8;
+  --card: #1a1f33;
+  --accent: #8ea5ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.site-header,
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.tagline {
+  margin: 0.5rem 0 0;
+  opacity: 0.85;
+}
+
+.site-nav {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.site-nav a,
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+button {
+  margin-top: 0.75rem;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+}
+
+button:hover {
+  filter: brightness(1.05);
+}

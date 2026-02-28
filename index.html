@@ -130,7 +130,22 @@
           Leave a note, say hi, or tell me something strange.
           Every message gets read.
         </p>
-        <p><a href="guestbook.html">Sign the Guestbook &rarr;</a></p>
+        <form id="guestbook-form" class="gb-form" autocomplete="off">
+          <div class="gb-field">
+            <label for="gb-name">Name</label>
+            <input type="text" id="gb-name" name="name" maxlength="40" placeholder="your name or alias" required />
+          </div>
+          <div class="gb-field">
+            <label for="gb-message">Message</label>
+            <textarea id="gb-message" name="message" maxlength="500" rows="3" placeholder="say something..." required></textarea>
+          </div>
+          <div class="gb-field gb-actions">
+            <button type="submit" class="gb-submit">Leave a note</button>
+            <span id="gb-status" class="gb-status"></span>
+          </div>
+        </form>
+        <div id="home-guestbook" class="gb-messages" style="margin-top: 0.75rem;"></div>
+        <div id="gb-pagination" class="gb-pagination"></div>
       </section>
     </main>
   </div>

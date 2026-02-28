@@ -70,3 +70,26 @@ document.addEventListener('mousemove', (e) => {
 
   setTimeout(() => dot.remove(), 500);
 });
+
+// ---- Homepage Guestbook Preview ----
+const homeGb = document.getElementById('home-guestbook');
+if (homeGb) {
+  fetch('https://notyet-guestbook.notyet.workers.dev/messages?page=1&limit=3')
+    .then(r => r.json())
+    .then(data => {
+      if (!data.messages || data.messages.length === 0) {
+        homeGb.innerHTML = '<p class="gb-empty">No messages yet. Be the first!</p>';
+        return;
+      }
+      homeGb.innerHTML = data.messages.map(m => {
+        const d = new Date(m.created_at + 'Z').toLocaleDateString('en-US', {
+          month: '2-digit', day: '2-digit', year: 'numeric'
+        });
+        const esc = s => { const el = document.createElement('div'); el.textContent = s; return el.innerHTML; };
+        return `<div class="gb-entry"><div class="gb-entry-header"><span class="gb-entry-name">${esc(m.name)}</span><span class="gb-entry-date">${d}</span></div><p class="gb-entry-body">${esc(m.message)}</p></div>`;
+      }).join('');
+    })
+    .catch(() => {
+      homeGb.innerHTML = '';
+    });
+}

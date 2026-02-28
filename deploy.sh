@@ -41,6 +41,10 @@ should_skip() {
       return 0
     fi
   done
+  # Skip file types not allowed on free Neocities
+  case "$f" in
+    *.ani|*.crs|*.txt) return 0 ;;
+  esac
   return 1
 }
 

@@ -4,7 +4,7 @@
 // ============================================
 
 // *** UPDATE THIS to your deployed API URL ***
-const GUESTBOOK_API = "http://localhost:3000";
+const GUESTBOOK_API = "https://neocities-ua5u.onrender.com";
 
 const form      = document.getElementById("guestbook-form");
 const nameInput = document.getElementById("gb-name");

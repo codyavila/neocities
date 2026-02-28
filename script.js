@@ -247,7 +247,7 @@
   ctxMenu.className = 'ctx-menu';
   ctxMenu.innerHTML = `
     <div class="ctx-menu-header">notyet</div>
-    <a class="ctx-menu-item" href="index.html">/ home</a>
+    <a class="ctx-menu-item" href="home.html">/ home</a>
     <a class="ctx-menu-item" href="about.html">/ about</a>
     <a class="ctx-menu-item" href="blog.html">/ blog</a>
     <a class="ctx-menu-item" href="game.html">/ game</a>

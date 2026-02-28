@@ -1,36 +1,145 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Neocities Site</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <h1>Welcome to My Neocities Site</h1>
-      <p class="tagline">A simple HTML, CSS, and JavaScript starter.</p>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="about.html">About</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>notyet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="stars" aria-hidden="true"></div>
 
-    <main class="container">
+  <div class="marquee-wrap" aria-hidden="true">
+    <span class="marquee-text">
+      ~*~ welcome to notyet's corner of the web ~*~ sophie stops the sun ~*~ currently: building bug villages ~*~ the sun is still waiting ~*~ best viewed with your heart open ~*~
+    </span>
+  </div>
+
+  <header class="site-header">
+    <h1 class="site-title">&#9734; notyet &#9734;</h1>
+    <p class="tagline">personal site &bull; project notes &bull; creative experiments</p>
+    <p class="header-divider">- - * - -</p>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="game.html">Game</a>
+    </nav>
+    <p class="status-line"><span>Status:</span><span>building...</span></p>
+  </header>
+
+  <hr class="rainbow-divider" />
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <div class="sidebar-title">&#9733; About Me</div>
+        <p>I'm notyet. Indie dev, story lover, bug village architect. Welcome to my site.</p>
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-title">Badges</div>
+        <div class="badge-grid">
+          <span class="badge badge-cyan">notyet</span>
+          <span class="badge badge-amber">indie dev</span>
+          <span class="badge badge-magenta">story first</span>
+          <span class="badge badge-green">WIP</span>
+          <span class="badge badge-pink blinky">new!</span>
+        </div>
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-title">Now</div>
+        <ul>
+          <li>Making: Sophie Stops the Sun</li>
+          <li>Learning: narrative design</li>
+          <li>Playing: ...</li>
+          <li>Listening: ...</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-title">Navigate</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="game.html">Game Hub</a></li>
+          <li><a href="devlog.html">Devlog</a></li>
+          <li><a href="lore.html">Lore</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-box under-construction">
+        <div class="sidebar-title">&#9888; Status</div>
+        <p>Forever under construction. That's the point.</p>
+      </div>
+
+      <div class="sidebar-box">
+        <button id="theme-toggle" class="theme-toggle" type="button">&#9734; let the sun in</button>
+      </div>
+    </aside>
+
+    <main class="content">
       <section class="card">
-        <h2>Hello, web!</h2>
+        <h2>Hello, Visitor</h2>
         <p>
-          Edit <strong>index.html</strong>, <strong>style.css</strong>, and
-          <strong>script.js</strong> to build your site.
+          I'm notyet. This site is mainly about me, what I'm making, and where
+          my projects are currently headed.
         </p>
-        <button id="theme-toggle" type="button">Toggle Theme</button>
+        <p>
+          I use this space for updates, ideas, and project documentation.
+          Pull up a chair and look around.
+        </p>
+      </section>
+
+      <section class="card accent-amber">
+        <h2>Current Project</h2>
+        <p>
+          I'm building <strong>Sophie Stops the Sun</strong> &mdash; a narrative game
+          about fear of change, bugs who fear the dawn, and a girl who hides
+          from tomorrow.
+        </p>
+        <p><a href="game.html">Enter the Game Hub &rarr;</a></p>
+      </section>
+
+      <section class="card accent-magenta">
+        <h2>Site Map</h2>
+        <ul class="updates">
+          <li><a href="about.html">About</a> &mdash; who I am, what this is</li>
+          <li><a href="game.html">Game</a> &mdash; project hub for Sophie Stops the Sun</li>
+          <li><a href="devlog.html">Devlog</a> &mdash; build notes and progress</li>
+          <li><a href="lore.html">Lore</a> &mdash; fragments from the world beneath the grass</li>
+        </ul>
+      </section>
+
+      <section class="card accent-green">
+        <h2>Guestbook</h2>
+        <p>
+          <em>Coming soon.</em> One day you'll be able to leave a note here.
+          For now, just know I'm glad you stopped by.
+        </p>
       </section>
     </main>
+  </div>
 
-    <footer class="site-footer">
-      <small>&copy; <span id="year"></span> My Neocities Site</small>
-    </footer>
+  <hr class="rainbow-divider" />
 
-    <script src="script.js" defer></script>
-  </body>
+  <footer class="site-footer">
+    <div class="footer-ascii" aria-hidden="true">*  . * .  *</div>
+    <div class="webring">
+      &#8592; <a href="#">Prev</a> &bull;
+      <a href="#">Webring</a> &bull;
+      <a href="#">Next</a> &#8594;
+    </div>
+    <div class="hit-counter">
+      visitors: <span class="counter-display" id="hit-counter">000000</span>
+    </div>
+    <p><small>&copy; <span id="year"></span> notyet</small></p>
+    <p class="footer-note">best viewed at 1024&times;768 with your heart open</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
 </html>

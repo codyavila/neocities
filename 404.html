@@ -1,29 +1,108 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 | Page Not Found</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <h1>404</h1>
-      <p class="tagline">That page could not be found.</p>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 | lost in the grass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="stars" aria-hidden="true"></div>
 
-    <main class="container">
+  <div class="marquee-wrap" aria-hidden="true">
+    <span class="marquee-text">
+      ~*~ you found the lost zone ~*~ this page has been swallowed by the tall grass ~*~ sophie can't help you here ~*~ go back home ~*~
+    </span>
+  </div>
+
+  <header class="site-header">
+    <h1 class="site-title">404 :: lost in the grass</h1>
+    <p class="tagline">this page could not be found</p>
+    <p class="header-divider">- - ? - -</p>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="game.html">Game</a>
+    </nav>
+  </header>
+
+  <hr class="rainbow-divider" />
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <div class="sidebar-title">&#9733; About Me</div>
+        <p>I'm notyet. Indie dev, story lover, bug village architect.</p>
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-title">Navigate</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="game.html">Game Hub</a></li>
+          <li><a href="devlog.html">Devlog</a></li>
+          <li><a href="lore.html">Lore</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-box">
+        <button id="theme-toggle" class="theme-toggle" type="button">&#9734; let the sun in</button>
+      </div>
+    </aside>
+
+    <main class="content">
       <section class="card">
-        <h2>Try going back home</h2>
-        <p>The page may have moved or the URL may be incorrect.</p>
-        <p><a href="index.html">Return to homepage</a></p>
+        <h2>You Wandered Too Far</h2>
+        <p>
+          The page you're looking for doesn't exist. Maybe it never did.
+          Maybe the bugs moved it underground.
+        </p>
+        <p>
+          The tall grass is quiet here. Nothing to find but the sound of wind
+          and the feeling that something important was nearby, once.
+        </p>
+      </section>
+
+      <section class="card accent-amber">
+        <h2>Try These Instead</h2>
+        <ul class="updates">
+          <li><a href="index.html">Go back home</a></li>
+          <li><a href="game.html">Visit the game hub</a></li>
+          <li><a href="lore.html">Read something strange</a></li>
+        </ul>
+      </section>
+
+      <section class="card accent-magenta">
+        <h2>Error Details</h2>
+        <p>
+          <strong>Code:</strong> 404<br />
+          <strong>Translation:</strong> The bugs don't know this address.<br />
+          <strong>Advice:</strong> Check the URL or just go home.
+        </p>
       </section>
     </main>
+  </div>
 
-    <footer class="site-footer">
-      <small>&copy; <span id="year"></span> My Neocities Site</small>
-    </footer>
+  <hr class="rainbow-divider" />
 
-    <script src="script.js" defer></script>
-  </body>
+  <footer class="site-footer">
+    <div class="footer-ascii" aria-hidden="true">*  . * .  *</div>
+    <div class="webring">
+      &#8592; <a href="#">Prev</a> &bull;
+      <a href="#">Webring</a> &bull;
+      <a href="#">Next</a> &#8594;
+    </div>
+    <div class="hit-counter">
+      visitors: <span class="counter-display" id="hit-counter">000000</span>
+    </div>
+    <p><small>&copy; <span id="year"></span> notyet</small></p>
+    <p class="footer-note">best viewed at 1024&times;768 with your heart open</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
 </html>

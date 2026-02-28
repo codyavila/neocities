@@ -5,20 +5,20 @@
 
 /* ---------- design tokens ---------- */
 :root {
-  --bg:            #080818;
-  --bg-card:       #101028;
-  --bg-sidebar:    #0c0c20;
-  --bg-header:     #0a0a1e;
-  --text:          #c8c8e0;
-  --text-dim:      #6e6e8e;
-  --text-bright:   #eeeeff;
-  --cyan:          #00ffcc;
-  --amber:         #ffaa22;
-  --magenta:       #dd55ff;
-  --pink:          #ff6699;
-  --green:         #44ff88;
-  --border:        #252548;
-  --border-glow:   #353568;
+  --bg:            #110d09;
+  --bg-card:       #1c1610;
+  --bg-sidebar:    #151008;
+  --bg-header:     #130e08;
+  --text:          #c8b89a;
+  --text-dim:      #7a6b55;
+  --text-bright:   #ede0c8;
+  --cyan:          #d4943a;
+  --amber:         #e07828;
+  --magenta:       #b84a3a;
+  --pink:          #c46848;
+  --green:         #7a9a50;
+  --border:        #2e2418;
+  --border-glow:   #3d3025;
   --font-pixel:    'VT323', 'Courier New', monospace;
   --font-body:     'Trebuchet MS', 'Lucida Sans', 'Segoe UI', sans-serif;
 }
@@ -148,7 +148,7 @@ body.day-mode #stars { display: none; }
   position: absolute;
   width: 2px;
   height: 2px;
-  background: white;
+  background: #ede0c8;
   border-radius: 50%;
   opacity: 0;
   animation: star-twinkle var(--dur) ease-in-out infinite;
@@ -175,8 +175,8 @@ body.day-mode #stars { display: none; }
   color: var(--cyan);
   text-shadow:
     0 0 10px var(--cyan),
-    0 0 30px rgba(0, 255, 204, 0.3),
-    0 0 60px rgba(0, 255, 204, 0.1);
+    0 0 30px rgba(212, 148, 58, 0.3),
+    0 0 60px rgba(212, 148, 58, 0.1);
   margin-bottom: 0.2rem;
   transition: text-shadow 0.3s, color 0.3s;
 }
@@ -220,14 +220,14 @@ body.day-mode .site-title {
 .site-nav a:hover {
   color: var(--cyan);
   border-color: var(--cyan);
-  background: rgba(0, 255, 204, 0.05);
-  box-shadow: 0 0 8px rgba(0, 255, 204, 0.3), inset 0 0 8px rgba(0, 255, 204, 0.05);
+  background: rgba(212, 148, 58, 0.08);
+  box-shadow: 0 0 8px rgba(212, 148, 58, 0.25), inset 0 0 8px rgba(212, 148, 58, 0.05);
 }
 .site-nav a[aria-current="page"],
 .site-nav a.active {
   color: var(--cyan);
   border-color: var(--cyan);
-  background: rgba(0, 255, 204, 0.08);
+  background: rgba(212, 148, 58, 0.1);
 }
 body.day-mode .site-nav a:hover,
 body.day-mode .site-nav a[aria-current="page"] {
@@ -393,7 +393,7 @@ body.day-mode .site-nav a[aria-current="page"] {
 }
 .card:hover {
   border-left-color: var(--amber);
-  box-shadow: 0 0 15px rgba(0, 255, 204, 0.06);
+  box-shadow: 0 0 15px rgba(212, 148, 58, 0.08);
 }
 body.day-mode .card:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -436,6 +436,14 @@ body.day-mode .card:hover {
   border-left-width: 1px;
 }
 .linkbox a { margin: 0 0.3rem; }
+
+/* ---- post date ---- */
+.post-date {
+  font-family: var(--font-pixel);
+  font-size: 1rem;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
 
 /* ---- stamp grid ---- */
 .stamp-grid {

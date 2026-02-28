@@ -53,7 +53,7 @@ if (starsContainer) {
 }
 
 // ---- Cursor Sparkles ----
-const sparkleColors = ['#00ffcc', '#ffaa22', '#dd55ff', '#ff6699', '#44ff88'];
+const sparkleColors = ['#d4943a', '#e07828', '#b84a3a', '#c46848', '#7a9a50'];
 let lastSparkle = 0;
 
 document.addEventListener('mousemove', (e) => {

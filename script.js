@@ -26,9 +26,14 @@
   /* ---------- Hit counter ---------- */
   const counter = document.getElementById('hit-counter');
   if (counter) {
-    let c = parseInt(localStorage.getItem('hit-count') || '0', 10) + 1;
-    localStorage.setItem('hit-count', c);
-    counter.textContent = String(c).padStart(6, '0');
+    fetch('https://notyet-guestbook.notyet.workers.dev/counter')
+      .then(r => r.json())
+      .then(data => {
+        counter.textContent = String(data.count || 0).padStart(6, '0');
+      })
+      .catch(() => {
+        counter.textContent = '------';
+      });
   }
 
   /* ---------- Fireflies / particles ---------- */

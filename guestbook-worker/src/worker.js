@@ -61,6 +61,19 @@ function sanitize(str, maxLen) {
 
 // ---- Routes ----
 
+async function handleCounter(request, db) {
+  // Atomically increment and return the count
+  await db
+    .prepare("UPDATE page_views SET count = count + 1 WHERE id = 1")
+    .run();
+
+  const row = await db
+    .prepare("SELECT count FROM page_views WHERE id = 1")
+    .first();
+
+  return json({ count: row ? row.count : 0 }, 200, request);
+}
+
 async function handleGet(request, db) {
   const url = new URL(request.url);
   const limit = Math.min(Math.max(parseInt(url.searchParams.get("limit")) || 50, 1), 100);
@@ -147,6 +160,11 @@ export default {
       // Health check
       if (pathname === "/" && request.method === "GET") {
         return json({ status: "ok", service: "notyet-guestbook" }, 200, request);
+      }
+
+      // GET /counter
+      if (pathname === "/counter" && request.method === "GET") {
+        return await handleCounter(request, env.DB);
       }
 
       // GET /messages

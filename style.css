@@ -957,6 +957,192 @@ em { color: var(--ink); font-style: italic; }
   letter-spacing: 2px;
 }
 
+.last-updated {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--ink-dim);
+  opacity: 0.5;
+  margin-top: 0.3rem;
+  letter-spacing: 1px;
+}
+
+/* ---------- 88x31 buttons ---------- */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  margin: 0.8rem 0 0.6rem;
+}
+
+.btn88 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 31px;
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--border-light);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
+  image-rendering: pixelated;
+  cursor: pointer;
+}
+.btn88:hover {
+  color: var(--heading);
+  border-color: var(--ink);
+  background: var(--paper-edge);
+}
+.btn88::after { display: none; }
+
+.btn88--invert {
+  background: var(--heading);
+  color: var(--bg);
+  border-color: var(--heading);
+}
+.btn88--invert:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn88--dashed {
+  border-style: dashed;
+}
+
+.btn88--blink span {
+  animation: btnBlink 1.2s step-end infinite;
+}
+@keyframes btnBlink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* =============== CUSTOM CONTEXT MENU =============== */
+.ctx-menu {
+  position: fixed;
+  z-index: 99999;
+  min-width: 180px;
+  background: var(--paper);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow);
+  padding: 0.35rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink);
+  opacity: 0;
+  transform: scale(0.95);
+  transform-origin: top left;
+  pointer-events: none;
+  transition: opacity 0.12s ease, transform 0.12s ease;
+}
+.ctx-menu.visible {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+.ctx-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.1s, color 0.1s;
+  white-space: nowrap;
+}
+.ctx-menu-item:hover {
+  background: var(--heading);
+  color: var(--bg);
+}
+.ctx-menu-item::after { display: none; }
+.ctx-menu-item .ctx-key {
+  margin-left: auto;
+  font-size: 0.65rem;
+  opacity: 0.4;
+  padding-left: 1.5rem;
+}
+.ctx-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.3rem 0;
+}
+.ctx-menu-header {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--ink-dim);
+  pointer-events: none;
+}
+
+/* =============== LINKS PAGE =============== */
+.links-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+.link-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+.link-entry:last-child {
+  border-bottom: none;
+}
+.link-entry-name {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.link-entry-desc {
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+}
+
+/* =============== CHANGELOG =============== */
+.changelog-entry {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px dotted var(--border);
+  font-size: 0.9rem;
+}
+.changelog-entry:last-child {
+  border-bottom: none;
+}
+.changelog-date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-dim);
+  white-space: nowrap;
+  padding-top: 0.15rem;
+}
+.changelog-text {
+  color: var(--ink);
+}
+.changelog-tag {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--border-light);
+  color: var(--ink-dim);
+  letter-spacing: 1px;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}
+
 /* =============== INK TRAIL =============== */
 .ink-drop {
   position: fixed;

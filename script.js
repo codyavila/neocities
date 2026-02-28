@@ -242,4 +242,62 @@
     return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   }
 
+  /* ---------- Custom context menu ---------- */
+  const ctxMenu = document.createElement('div');
+  ctxMenu.className = 'ctx-menu';
+  ctxMenu.innerHTML = `
+    <div class="ctx-menu-header">notyet</div>
+    <a class="ctx-menu-item" href="index.html">/ home</a>
+    <a class="ctx-menu-item" href="about.html">/ about</a>
+    <a class="ctx-menu-item" href="blog.html">/ blog</a>
+    <a class="ctx-menu-item" href="game.html">/ game</a>
+    <a class="ctx-menu-item" href="links.html">/ links</a>
+    <a class="ctx-menu-item" href="guestbook.html">/ guestbook</a>
+    <div class="ctx-divider"></div>
+    <div class="ctx-menu-item" data-action="toggle-lights">toggle lights<span class="ctx-key">T</span></div>
+    <div class="ctx-menu-item" data-action="view-source">view source<span class="ctx-key">U</span></div>
+    <div class="ctx-divider"></div>
+    <div class="ctx-menu-item" data-action="secret">you found the menu</div>
+  `;
+  document.body.appendChild(ctxMenu);
+
+  document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    const x = e.clientX;
+    const y = e.clientY;
+    const menuW = 200;
+    const menuH = ctxMenu.offsetHeight || 300;
+    const posX = x + menuW > window.innerWidth ? x - menuW : x;
+    const posY = y + menuH > window.innerHeight ? y - menuH : y;
+    ctxMenu.style.left = Math.max(0, posX) + 'px';
+    ctxMenu.style.top = Math.max(0, posY) + 'px';
+    ctxMenu.classList.add('visible');
+  });
+
+  document.addEventListener('click', () => {
+    ctxMenu.classList.remove('visible');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') ctxMenu.classList.remove('visible');
+  });
+
+  ctxMenu.querySelectorAll('[data-action]').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const action = item.dataset.action;
+      ctxMenu.classList.remove('visible');
+
+      if (action === 'toggle-lights' && toggle) {
+        toggle.click();
+      } else if (action === 'view-source') {
+        window.open('view-source:' + window.location.href);
+      } else if (action === 'secret') {
+        document.body.style.transition = 'filter 0.5s';
+        document.body.style.filter = 'invert(1)';
+        setTimeout(() => { document.body.style.filter = ''; }, 1500);
+      }
+    });
+  });
+
 })();

@@ -305,13 +305,14 @@
     <a class="ctx-menu-item" href="guestbook.html">/ guestbook</a>
     <div class="ctx-divider"></div>
     <div class="ctx-menu-item" data-action="toggle-lights">toggle lights<span class="ctx-key">T</span></div>
-    <div class="ctx-menu-item" data-action="view-source">view source<span class="ctx-key">U</span></div>
     <div class="ctx-divider"></div>
-    <div class="ctx-menu-item" data-action="secret">you found the menu</div>
+    <div class="ctx-menu-hint">shift + right-click for browser menu</div>
   `;
   document.body.appendChild(ctxMenu);
 
   document.addEventListener('contextmenu', (e) => {
+    /* shift+right-click passes through to the browser's native menu */
+    if (e.shiftKey) return;
     e.preventDefault();
     const x = e.clientX;
     const y = e.clientY;
@@ -340,12 +341,6 @@
 
       if (action === 'toggle-lights' && toggle) {
         toggle.click();
-      } else if (action === 'view-source') {
-        window.open('view-source:' + window.location.href);
-      } else if (action === 'secret') {
-        document.body.style.transition = 'filter 0.5s';
-        document.body.style.filter = 'invert(1)';
-        setTimeout(() => { document.body.style.filter = ''; }, 1500);
       }
     });
   });

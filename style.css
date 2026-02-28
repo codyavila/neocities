@@ -1109,6 +1109,14 @@ em { color: var(--ink); font-style: italic; }
   color: var(--ink-dim);
   pointer-events: none;
 }
+.ctx-menu-hint {
+  padding: 0.3rem 0.8rem 0.4rem;
+  font-size: 0.6rem;
+  color: var(--ink-dim);
+  opacity: 0.6;
+  pointer-events: none;
+  font-style: italic;
+}
 
 /* =============== LINKS PAGE =============== */
 .links-grid {

@@ -17,7 +17,7 @@ const DB_PATH = path.join(__dirname, "guestbook.db");
 
 // --- Your Neocities URL (update when you know it) ---
 const ALLOWED_ORIGINS = [
-  "https://notyet.neocities.org",
+  "https://hidingfromtomorrow.neocities.org",
   "http://localhost:8080",
   "http://127.0.0.1:8080",
   "http://0.0.0.0:8080",

@@ -510,9 +510,7 @@ em { color: var(--ink); font-style: italic; }
   border: 1px solid var(--border);
   padding: 1.5rem 1.6rem;
   position: relative;
-  transition: transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  transform-style: preserve-3d;
-  perspective: 800px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
   border-color: var(--border-light);
@@ -537,14 +535,14 @@ em { color: var(--ink); font-style: italic; }
 .card ul, .card ol { padding-left: 1.3rem; margin-bottom: 0.75rem; }
 .card li { margin-bottom: 0.3rem; line-height: 1.65; }
 
-/* ---- accent edges ---- */
+/* ---- accent edges (varied styles for visual rhythm) ---- */
 .card.accent-amber   { border-left: 2px solid var(--ink-dim); }
-.card.accent-magenta { border-left: 2px solid var(--ink-dim); }
-.card.accent-pink    { border-left: 2px solid var(--ink-dim); }
-.card.accent-green   { border-left: 2px solid var(--ink-dim); }
-.card.accent-lavender { border-left: 2px solid var(--ink-dim); }
-.card.accent-sky     { border-left: 2px solid var(--ink-dim); }
-.card.accent-rust    { border-left: 2px solid var(--ink-dim); }
+.card.accent-magenta { border-left: 2px dashed var(--ink-dim); }
+.card.accent-pink    { border-left: 2px dotted var(--ink-dim); }
+.card.accent-green   { border-left: 3px solid var(--border-light); }
+.card.accent-lavender { border-left: 2px double var(--ink-dim); }
+.card.accent-sky     { border-left: 1px solid var(--ink); }
+.card.accent-rust    { border-left: 3px dashed var(--border-light); }
 
 /* ---- scanline on card hover ---- */
 .card::before {
@@ -1020,4 +1018,27 @@ em { color: var(--ink); font-style: italic; }
   .site-nav a { font-size: 0.7rem; padding: 0.3rem 0.5rem; }
   .quick-nav { grid-template-columns: 1fr; }
   .gb-actions { flex-direction: column; align-items: flex-start; }
+}
+
+/* ---- Touch devices: no crosshair ---- */
+@media (pointer: coarse) {
+  body { cursor: auto; }
+  .ink-drop { display: none; }
+}
+
+/* =============== REDUCED MOTION =============== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  body::before { animation: none; opacity: 0.02; }
+  body::after  { display: none; }
+  .site-title::before,
+  .site-title::after { display: none; }
+  .marquee-text { animation: none; padding-left: 1rem; }
+  .fade-in { opacity: 1; transform: none; }
+  .ink-drop { display: none; }
+  .card { transition: none; }
 }

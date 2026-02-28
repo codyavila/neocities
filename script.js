@@ -53,10 +53,12 @@
   }
 
   /* ---------- Ink cursor trail ---------- */
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let lastInk = 0;
   const inkInterval = 60; // ms between drops
 
   document.addEventListener('mousemove', (e) => {
+    if (prefersReduced) return;
     const now = Date.now();
     if (now - lastInk < inkInterval) return;
     lastInk = now;
@@ -72,20 +74,7 @@
     drop.addEventListener('animationend', () => drop.remove());
   });
 
-  /* ---------- 3D card tilt ---------- */
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
-      const rotateX = (y - 0.5) * -6;
-      const rotateY = (x - 0.5) * 6;
-      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
+
 
   /* ---------- Magnetic nav links ---------- */
   document.querySelectorAll('.site-nav a').forEach(link => {
@@ -109,6 +98,7 @@
 
   function scrambleText(el) {
     const original = el.dataset.scramble || el.textContent;
+    if (prefersReduced) { el.textContent = original; return; }
     el.dataset.scramble = original;
     const len = original.length;
     let iteration = 0;

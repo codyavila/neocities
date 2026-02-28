@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>guestbook | notyet</title>
+  <meta name="description" content="Leave a note in notyet's guestbook — like carving your name on a tree." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=VT323&family=Lora:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;600&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet" />
@@ -74,13 +75,13 @@
           </div>
           <button type="submit">leave your mark</button>
         </form>
-        <p id="gb-status" class="guestbook-status" hidden></p>
+        <p id="gb-status" class="guestbook-status"></p>
       </section>
 
       <section class="card accent-amber fade-in">
         <h2 data-scramble>messages <small id="msg-count"></small></h2>
         <div id="guestbook-messages" class="guestbook-entries">
-          <p class="loading">loading messages...</p>
+          <p class="gb-loading">loading messages...</p>
         </div>
         <div class="guestbook-pagination" id="gb-pagination"></div>
       </section>

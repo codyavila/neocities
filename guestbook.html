@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 | lost in the grass</title>
+  <title>Guestbook | notyet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
@@ -14,20 +14,21 @@
 
   <div class="marquee-wrap" aria-hidden="true">
     <span class="marquee-text">
-      ~*~ you found the lost zone ~*~ this page has been swallowed by the tall grass ~*~ sophie can't help you here ~*~ go back home ~*~
+      ~*~ the guestbook ~*~ leave a note ~*~ say hi ~*~ the bugs are reading ~*~ sophie appreciates it ~*~
     </span>
   </div>
 
   <header class="site-header">
-    <h1 class="site-title">404 :: lost in the grass</h1>
-    <p class="tagline">this page could not be found</p>
-    <p class="header-divider">- - ? - -</p>
+    <h1 class="site-title">guestbook</h1>
+    <p class="tagline">leave a note, say hello, tell me something strange</p>
+    <p class="header-divider">- - * - -</p>
     <nav class="site-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="blog.html">Blog</a>
       <a href="game.html">Game</a>
     </nav>
+    <p class="status-line"><span>Messages:</span><span id="msg-count">...</span></p>
   </header>
 
   <hr class="rainbow-divider" />
@@ -45,10 +46,18 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="guestbook.html">Guestbook</a></li>
           <li><a href="game.html">Game Hub</a></li>
           <li><a href="devlog.html">Devlog</a></li>
           <li><a href="lore.html">Lore</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-title">Rules</div>
+        <ul>
+          <li>Be kind</li>
+          <li>No spam</li>
+          <li>Say something real</li>
         </ul>
       </div>
 
@@ -58,34 +67,32 @@
     </aside>
 
     <main class="content">
-      <section class="card">
-        <h2>You Wandered Too Far</h2>
-        <p>
-          The page you're looking for doesn't exist. Maybe it never did.
-          Maybe the bugs moved it underground.
-        </p>
-        <p>
-          The tall grass is quiet here. Nothing to find but the sound of wind
-          and the feeling that something important was nearby, once.
-        </p>
-      </section>
-
+      <!-- ====== SIGN FORM ====== -->
       <section class="card accent-amber">
-        <h2>Try These Instead</h2>
-        <ul class="updates">
-          <li><a href="index.html">Go back home</a></li>
-          <li><a href="game.html">Visit the game hub</a></li>
-          <li><a href="lore.html">Read something strange</a></li>
-        </ul>
+        <h2>Sign the Guestbook</h2>
+        <form id="guestbook-form" class="gb-form" autocomplete="off">
+          <div class="gb-field">
+            <label for="gb-name">Name</label>
+            <input type="text" id="gb-name" name="name" maxlength="40" placeholder="your name or alias" required />
+          </div>
+          <div class="gb-field">
+            <label for="gb-message">Message</label>
+            <textarea id="gb-message" name="message" maxlength="500" rows="4" placeholder="say something..." required></textarea>
+          </div>
+          <div class="gb-field gb-actions">
+            <button type="submit" class="gb-submit">Leave a note</button>
+            <span id="gb-status" class="gb-status"></span>
+          </div>
+        </form>
       </section>
 
-      <section class="card accent-magenta">
-        <h2>Error Details</h2>
-        <p>
-          <strong>Code:</strong> 404<br />
-          <strong>Translation:</strong> The bugs don't know this address.<br />
-          <strong>Advice:</strong> Check the URL or just go home.
-        </p>
+      <!-- ====== MESSAGES ====== -->
+      <section class="card">
+        <h2>Messages</h2>
+        <div id="guestbook-messages" class="gb-messages">
+          <p class="gb-loading">Loading messages...</p>
+        </div>
+        <div id="gb-pagination" class="gb-pagination"></div>
       </section>
     </main>
   </div>
@@ -107,5 +114,6 @@
   </footer>
 
   <script src="script.js" defer></script>
+  <script src="guestbook.js" defer></script>
 </body>
 </html>

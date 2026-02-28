@@ -52,27 +52,72 @@
     }
   }
 
-  /* ---------- Ink cursor trail ---------- */
+  /* ---------- Ghost cursor trail ---------- */
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let lastInk = 0;
-  const inkInterval = 60; // ms between drops
+  const isTouch = window.matchMedia('(pointer: coarse)').matches;
 
-  document.addEventListener('mousemove', (e) => {
-    if (prefersReduced) return;
-    const now = Date.now();
-    if (now - lastInk < inkInterval) return;
-    lastInk = now;
+  if (!prefersReduced && !isTouch) {
+    const TRAIL_COUNT = 5;
+    const FRICTION = 0.75;
+    const SPRING = 0.1;
+    const dots = [];
+    let mouseX = -100, mouseY = -100;
 
-    const drop = document.createElement('div');
-    drop.className = 'ink-drop';
-    const size = Math.random() * 4 + 2;
-    drop.style.width = size + 'px';
-    drop.style.height = size + 'px';
-    drop.style.left = (e.clientX - size / 2) + 'px';
-    drop.style.top = (e.clientY - size / 2) + 'px';
-    document.body.appendChild(drop);
-    drop.addEventListener('animationend', () => drop.remove());
-  });
+    const LIGHT_CUR = "assets/guy-cusor-final/Guy-Normal%20select.cur";
+    const DARK_CUR  = "assets/guy-cusor-final-dark/Guy-Normal%20select.cur";
+
+    function trailSrc() {
+      // Opposite of the active cursor
+      return document.body.classList.contains('day-mode') ? LIGHT_CUR : DARK_CUR;
+    }
+
+    for (let i = 0; i < TRAIL_COUNT; i++) {
+      const el = document.createElement('div');
+      el.className = 'trail-dot';
+      const size = 28 - i * 3;
+      el.style.width = size + 'px';
+      el.style.height = size + 'px';
+      el.style.backgroundImage = "url('" + trailSrc() + "')";
+      document.body.appendChild(el);
+      dots.push({ el, x: -100, y: -100, vx: 0, vy: 0 });
+    }
+
+    // Swap trail image when theme toggles
+    const toggle = document.querySelector('.theme-toggle');
+    if (toggle) toggle.addEventListener('click', () => {
+      setTimeout(() => {
+        const src = trailSrc();
+        dots.forEach(d => d.el.style.backgroundImage = "url('" + src + "')");
+      }, 50);
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function animateTrail() {
+      let prevX = mouseX;
+      let prevY = mouseY;
+
+      for (let i = 0; i < dots.length; i++) {
+        const dot = dots[i];
+        dot.vx = (dot.vx + (prevX - dot.x) * SPRING) * FRICTION;
+        dot.vy = (dot.vy + (prevY - dot.y) * SPRING) * FRICTION;
+        dot.x += dot.vx;
+        dot.y += dot.vy;
+
+        dot.el.style.transform = 'translate(' + dot.x + 'px,' + dot.y + 'px)';
+        dot.el.style.opacity = ((1 - i / dots.length) * 0.2).toFixed(3);
+
+        prevX = dot.x;
+        prevY = dot.y;
+      }
+      requestAnimationFrame(animateTrail);
+    }
+
+    animateTrail();
+  }
 
 
 

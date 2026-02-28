@@ -1,0 +1,33 @@
+﻿[Wait]
+Path=Guy-Busy.ani
+
+[Hand]
+Path=Guy-extra-Link select.ani
+
+[Arrow]
+Path=Guy-extra-Normal select.ani
+
+[NWPen]
+Path=Guy-handwriting.cur
+
+[Help]
+Path=Guy-Help select.cur
+
+[Pin]
+Path=Guy-location select.cur
+
+[Person]
+Path=Guy-Person select.ani
+
+[Crosshair]
+Path=Guy-Precision Select.cur
+
+[IBeam]
+Path=Guy-Text select.cur
+
+[No]
+Path=Guy-Unavailable.cur
+
+[AppStarting]
+Path=Guy-Working in background.ani
+

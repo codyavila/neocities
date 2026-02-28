@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>notyet</title>
-  <meta name="description" content="notyet's personal site — indie dev, creative experiments, and Sophie Stops the Sun." />
+  <meta name="description" content="notyet's personal site -- indie dev, creative experiments, and Sophie Stops the Sun." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=VT323&family=Lora:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;600&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet" />
@@ -228,6 +228,42 @@
 
     // Day mode persistence
     if (localStorage.getItem('theme') === 'day') document.body.classList.add('day-mode');
+
+    // Ghost cursor trail on splash
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+    if (!prefersReduced && !isTouch) {
+      const TRAIL_COUNT = 5, FRICTION = 0.75, SPRING = 0.1;
+      const LIGHT_CUR = "assets/guy-cusor-final/Guy-Normal%20select.cur";
+      const DARK_CUR  = "assets/guy-cusor-final-dark/Guy-Normal%20select.cur";
+      const curSrc = document.body.classList.contains('day-mode') ? LIGHT_CUR : DARK_CUR;
+      const dots = [];
+      let mx = -100, my = -100;
+      for (let i = 0; i < TRAIL_COUNT; i++) {
+        const el = document.createElement('div');
+        el.className = 'trail-dot';
+        const sz = 28 - i * 3;
+        el.style.width = sz + 'px';
+        el.style.height = sz + 'px';
+        el.style.backgroundImage = "url('" + curSrc + "')";
+        document.body.appendChild(el);
+        dots.push({ el, x: -100, y: -100, vx: 0, vy: 0 });
+      }
+      document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
+      (function loop() {
+        let px = mx, py = my;
+        for (let i = 0; i < dots.length; i++) {
+          const d = dots[i];
+          d.vx = (d.vx + (px - d.x) * SPRING) * FRICTION;
+          d.vy = (d.vy + (py - d.y) * SPRING) * FRICTION;
+          d.x += d.vx; d.y += d.vy;
+          d.el.style.transform = 'translate(' + d.x + 'px,' + d.y + 'px)';
+          d.el.style.opacity = ((1 - i / dots.length) * 0.2).toFixed(3);
+          px = d.x; py = d.y;
+        }
+        requestAnimationFrame(loop);
+      })();
+    }
   </script>
 </body>
 </html>

@@ -60,7 +60,34 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   transition: background var(--transition), color var(--transition);
-  cursor: crosshair;
+  cursor: url('assets/guy-cusor-final/Guy-Normal%20select.cur'), auto;
+}
+
+/* Custom cursors -- light set for dark mode (default) */
+a, button, [role="button"], .theme-toggle, .gb-submit, .btn, .quick-nav-item, .ctx-menu-item, .btn88 {
+  cursor: url('assets/guy-cusor-final/Guy-Link%20select.cur'), pointer;
+}
+input, textarea {
+  cursor: url('assets/guy-cusor-final/Guy-Text%20select.cur'), text;
+}
+[title], [data-tooltip], .help {
+  cursor: url('assets/guy-cusor-final/Guy-Help%20select.cur'), help;
+}
+
+/* Dark cursors for light/day mode */
+body.day-mode {
+  cursor: url('assets/guy-cusor-final-dark/Guy-Normal%20select.cur'), auto;
+}
+body.day-mode a, body.day-mode button, body.day-mode [role="button"],
+body.day-mode .theme-toggle, body.day-mode .gb-submit, body.day-mode .btn,
+body.day-mode .quick-nav-item, body.day-mode .ctx-menu-item, body.day-mode .btn88 {
+  cursor: url('assets/guy-cusor-final-dark/Guy-Link%20select.cur'), pointer;
+}
+body.day-mode input, body.day-mode textarea {
+  cursor: url('assets/guy-cusor-final-dark/Guy-Text%20select.cur'), text;
+}
+body.day-mode [title], body.day-mode [data-tooltip], body.day-mode .help {
+  cursor: url('assets/guy-cusor-final-dark/Guy-Help%20select.cur'), help;
 }
 
 /* ---------- Film grain overlay ---------- */
@@ -1143,20 +1170,17 @@ em { color: var(--ink); font-style: italic; }
   vertical-align: middle;
 }
 
-/* =============== INK TRAIL =============== */
-.ink-drop {
+/* =============== CURSOR TRAIL =============== */
+.trail-dot {
   position: fixed;
+  top: 0;
+  left: 0;
   pointer-events: none;
   z-index: 9998;
-  border-radius: 50%;
-  background: var(--heading);
+  background-size: contain;
+  background-repeat: no-repeat;
   opacity: 0;
-  animation: inkDrop 1.5s ease-out forwards;
-}
-@keyframes inkDrop {
-  0%   { opacity: 0.15; transform: scale(1); }
-  30%  { opacity: 0.08; }
-  100% { opacity: 0; transform: scale(3); }
+  will-change: transform, opacity;
 }
 
 /* =============== TEXT SCRAMBLE =============== */
@@ -1206,10 +1230,12 @@ em { color: var(--ink); font-style: italic; }
   .gb-actions { flex-direction: column; align-items: flex-start; }
 }
 
-/* ---- Touch devices: no crosshair ---- */
+/* ---- Touch devices: no custom cursor ---- */
 @media (pointer: coarse) {
-  body { cursor: auto; }
-  .ink-drop { display: none; }
+  body, body.day-mode { cursor: auto; }
+  a, button, [role="button"] { cursor: pointer; }
+  input, textarea { cursor: text; }
+  .trail-dot { display: none; }
 }
 
 /* =============== REDUCED MOTION =============== */
@@ -1225,6 +1251,6 @@ em { color: var(--ink); font-style: italic; }
   .site-title::after { display: none; }
   .marquee-text { animation: none; padding-left: 1rem; }
   .fade-in { opacity: 1; transform: none; }
-  .ink-drop { display: none; }
+  .trail-dot { display: none; }
   .card { transition: none; }
 }

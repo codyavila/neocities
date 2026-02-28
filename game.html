@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Game | notyet</title>
+  <title>game hub | notyet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Lora:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;600&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,21 +14,22 @@
 
   <div class="marquee-wrap" aria-hidden="true">
     <span class="marquee-text">
-      ~*~ sophie stops the sun ~*~ she's moving tomorrow and she wants none of it ~*~ a game of hide and seek with the sun ~*~ pre-alpha ~*~
+      ~*~ sophie stops the sun ~*~ a deal with light ~*~ a girl who won't let go ~*~ bugs in the grass ~*~
     </span>
   </div>
 
   <header class="site-header">
-    <h1 class="site-title">Sophie Stops the Sun</h1>
-    <p class="tagline">game hub for dev updates, lore, and project notes</p>
+    <h1 class="site-title" data-text="sophie stops the sun">sophie stops the sun</h1>
+    <p class="tagline">a game about a girl, a deal, and a world that keeps turning</p>
     <p class="header-divider">- - * - -</p>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="game.html" aria-current="page">Game</a>
+      <a href="index.html">home</a>
+      <a href="about.html">about</a>
+      <a href="blog.html">blog</a>
+      <a href="game.html" aria-current="page">game</a>
+      <a href="guestbook.html">guestbook</a>
     </nav>
-    <p class="status-line"><span>Stage:</span><span>Pre-Alpha</span></p>
+    <p class="status-line"><span>status:</span><span>in development</span></p>
   </header>
 
   <hr class="rainbow-divider" />
@@ -36,94 +37,86 @@
   <div class="layout">
     <aside class="sidebar">
       <div class="sidebar-box">
-        <div class="sidebar-title">&#9733; About Me</div>
-        <p>I'm notyet. Indie dev, story lover, bug village architect.</p>
-      </div>
-
-      <div class="sidebar-box">
-        <div class="sidebar-title">Game Nav</div>
+        <div class="sidebar-title">game links</div>
         <ul>
-          <li><a href="game.html">Overview</a></li>
-          <li><a href="devlog.html">Devlog</a></li>
-          <li><a href="lore.html">Lore Archive</a></li>
+          <li><a href="game.html">game hub</a></li>
+          <li><a href="devlog.html">devlog</a></li>
+          <li><a href="lore.html">lore fragments</a></li>
         </ul>
       </div>
 
       <div class="sidebar-box">
-        <div class="sidebar-title">Badges</div>
-        <div class="badge-grid">
-          <span class="badge badge-cyan">notyet</span>
-          <span class="badge badge-amber">indie dev</span>
-          <span class="badge badge-magenta">story first</span>
-          <span class="badge badge-green">WIP</span>
-        </div>
-      </div>
-
-      <div class="sidebar-box">
-        <div class="sidebar-title">Navigate</div>
+        <div class="sidebar-title">quick facts</div>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="game.html">Game Hub</a></li>
+          <li>Genre: narrative / emotional</li>
+          <li>Engine: TBD</li>
+          <li>Theme: grief &amp; letting go</li>
+          <li>Status: early development</li>
         </ul>
       </div>
 
       <div class="sidebar-box">
-        <button id="theme-toggle" class="theme-toggle" type="button">&#9734; let the sun in</button>
+        <div class="sidebar-title">navigate</div>
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="blog.html">blog</a></li>
+          <li><a href="guestbook.html">guestbook</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-box">
+        <button id="theme-toggle" class="theme-toggle" type="button">lights on</button>
       </div>
     </aside>
 
     <main class="content">
-      <section class="card">
-        <h2>Overview</h2>
+      <section class="card fade-in">
+        <h2 data-scramble>the premise</h2>
         <p>
-          Sophie is moving tomorrow. New school, new house, new everything &mdash;
-          and she wants none of it.
+          Sophie lives at the edge of a neighborhood that's about to change.
+          Her family is moving. She doesn't want to go.
         </p>
         <p>
-          So she makes a deal with the sun. A game of hide and seek. If she
-          can hide long enough, maybe tomorrow will just&hellip; forget to show up.
-          She finds the perfect spot in her backyard, tucks herself in, and waits.
+          One evening she makes a deal with the sun: if it never sets, tomorrow
+          never comes, and she never has to leave. The sun agrees &mdash; but the
+          world doesn't stop just because the sky won't turn.
         </p>
-        <p>It works.</p>
+      </section>
+
+      <div class="pull-quote fade-in">if the sun never sets, tomorrow never comes</div>
+
+      <section class="card accent-amber fade-in">
+        <h2 data-scramble>the bugs</h2>
+        <p>
+          In the tall grass behind Sophie's house, a civilization of bugs has
+          been growing. They have their own culture, their own struggles, and
+          their own relationship with the endless daylight Sophie created.
+        </p>
+        <p>
+          The bugs didn't ask for a world without night. Some of them are
+          thriving. Some of them are <span class="redacted">not</span>.
+        </p>
+      </section>
+
+      <section class="card accent-magenta fade-in">
+        <h2 data-scramble>what the game is about</h2>
+        <p>
+          It's about the gap between holding on and letting go. About how the
+          things we do to protect ourselves ripple outward. About saying goodbye
+          to a place and realizing the place was never really yours.
+        </p>
+        <p class="journal-note">
+          "saying goodbye doesn't have to mean losing everything"
+        </p>
+      </section>
+
+      <section class="card accent-green fade-in">
+        <h2 data-scramble>explore more</h2>
         <ul class="updates">
-          <li>Genre: Story-driven adventure</li>
-          <li>Tone: Tender, strange, and bittersweet</li>
-          <li>Inspirations: Undertale, EarthBound, Omori, James and the Giant Peach</li>
+          <li><a href="devlog.html">devlog &rarr;</a> &mdash; follow the build process</li>
+          <li><a href="lore.html">lore fragments &rarr;</a> &mdash; pieces of the world</li>
         </ul>
-      </section>
-
-      <section class="card accent-amber">
-        <h2>The World in the Grass</h2>
-        <p>
-          While Sophie has been hiding, something else has been growing. A whole
-          civilization of bugs has taken root in the grass around her &mdash;
-          tunnels, towers, tiny lives going about their tiny business. And just
-          like Sophie, they're afraid of the sun. They've built their whole
-          world around avoiding it.
-        </p>
-        <p>
-          Sophie wanders into that world. She learns their fears, their stories,
-          the way they've made something beautiful in the shade. And somewhere
-          in all of it, she starts to wonder if maybe she can too.
-        </p>
-      </section>
-
-      <section class="card accent-magenta">
-        <h2>What It's About</h2>
-        <p>
-          Sophie Stops the Sun is a story about being afraid of what comes
-          next &mdash; and learning that saying goodbye doesn't have to mean
-          losing everything.
-        </p>
-      </section>
-
-      <section class="card accent-green linkbox">
-        <h2>Project Sections</h2>
-        <p>
-          <a href="devlog.html">Devlog</a> &bull;
-          <a href="lore.html">Lore Archive</a>
-        </p>
       </section>
     </main>
   </div>
@@ -131,17 +124,17 @@
   <hr class="rainbow-divider" />
 
   <footer class="site-footer">
-    <div class="footer-ascii" aria-hidden="true">*  . * .  *</div>
+    <div class="footer-ascii" aria-hidden="true">. * . * .</div>
     <div class="webring">
-      &#8592; <a href="#">Prev</a> &bull;
-      <a href="#">Webring</a> &bull;
-      <a href="#">Next</a> &#8594;
+      &larr; <a href="#">prev</a> &middot;
+      <a href="#">webring</a> &middot;
+      <a href="#">next</a> &rarr;
     </div>
     <div class="hit-counter">
       visitors: <span class="counter-display" id="hit-counter">000000</span>
     </div>
     <p><small>&copy; <span id="year"></span> notyet</small></p>
-    <p class="footer-note">best viewed at 1024&times;768 with your heart open</p>
+    <p class="footer-note">best viewed at 1024x768 with your heart open</p>
   </footer>
 
   <script src="script.js" defer></script>

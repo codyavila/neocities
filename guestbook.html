@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guestbook | notyet</title>
+  <title>guestbook | notyet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Lora:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;600&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,21 +14,21 @@
 
   <div class="marquee-wrap" aria-hidden="true">
     <span class="marquee-text">
-      ~*~ the guestbook ~*~ leave a note ~*~ say hi ~*~ the bugs are reading ~*~ sophie appreciates it ~*~
+      ~*~ guestbook ~*~ leave a note ~*~ say hi ~*~ tell me something nice ~*~ or something weird ~*~
     </span>
   </div>
 
   <header class="site-header">
-    <h1 class="site-title">guestbook</h1>
-    <p class="tagline">leave a note, say hello, tell me something strange</p>
+    <h1 class="site-title" data-text="guestbook">guestbook</h1>
+    <p class="tagline">leave a note &mdash; like carving your name on a tree</p>
     <p class="header-divider">- - * - -</p>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="game.html">Game</a>
+      <a href="index.html">home</a>
+      <a href="about.html">about</a>
+      <a href="blog.html">blog</a>
+      <a href="game.html">game</a>
+      <a href="guestbook.html" aria-current="page">guestbook</a>
     </nav>
-    <p class="status-line"><span>Messages:</span><span id="msg-count">...</span></p>
   </header>
 
   <hr class="rainbow-divider" />
@@ -36,63 +36,53 @@
   <div class="layout">
     <aside class="sidebar">
       <div class="sidebar-box">
-        <div class="sidebar-title">&#9733; About Me</div>
-        <p>I'm notyet. Indie dev, story lover, bug village architect.</p>
+        <div class="sidebar-title">note</div>
+        <p style="font-style:italic;font-size:.9rem;margin:.4rem 0;">
+          be kind. be weird. be yourself. no spam please &mdash; the bugs
+          don't like it.
+        </p>
       </div>
 
       <div class="sidebar-box">
-        <div class="sidebar-title">Navigate</div>
+        <div class="sidebar-title">navigate</div>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="game.html">Game Hub</a></li>
-          <li><a href="devlog.html">Devlog</a></li>
-          <li><a href="lore.html">Lore</a></li>
+          <li><a href="index.html">home</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="blog.html">blog</a></li>
+          <li><a href="game.html">game hub</a></li>
         </ul>
       </div>
 
       <div class="sidebar-box">
-        <div class="sidebar-title">Rules</div>
-        <ul>
-          <li>Be kind</li>
-          <li>No spam</li>
-          <li>Say something real</li>
-        </ul>
-      </div>
-
-      <div class="sidebar-box">
-        <button id="theme-toggle" class="theme-toggle" type="button">&#9734; let the sun in</button>
+        <button id="theme-toggle" class="theme-toggle" type="button">lights on</button>
       </div>
     </aside>
 
     <main class="content">
-      <!-- ====== SIGN FORM ====== -->
-      <section class="card accent-amber">
-        <h2>Sign the Guestbook</h2>
-        <form id="guestbook-form" class="gb-form" autocomplete="off">
-          <div class="gb-field">
-            <label for="gb-name">Name</label>
-            <input type="text" id="gb-name" name="name" maxlength="40" placeholder="your name or alias" required />
+      <section class="card fade-in">
+        <h2 data-scramble>leave a message</h2>
+        <form id="guestbook-form" class="guestbook-form">
+          <div class="form-group">
+            <label for="gb-name">name</label>
+            <input type="text" id="gb-name" name="name" maxlength="50"
+                   placeholder="what should I call you?" required />
           </div>
-          <div class="gb-field">
-            <label for="gb-message">Message</label>
-            <textarea id="gb-message" name="message" maxlength="500" rows="4" placeholder="say something..." required></textarea>
+          <div class="form-group">
+            <label for="gb-message">message</label>
+            <textarea id="gb-message" name="message" rows="4" maxlength="500"
+                      placeholder="say something..." required></textarea>
           </div>
-          <div class="gb-field gb-actions">
-            <button type="submit" class="gb-submit">Leave a note</button>
-            <span id="gb-status" class="gb-status"></span>
-          </div>
+          <button type="submit">leave your mark</button>
         </form>
+        <p id="gb-status" class="guestbook-status" hidden></p>
       </section>
 
-      <!-- ====== MESSAGES ====== -->
-      <section class="card">
-        <h2>Messages</h2>
-        <div id="guestbook-messages" class="gb-messages">
-          <p class="gb-loading">Loading messages...</p>
+      <section class="card accent-amber fade-in">
+        <h2 data-scramble>messages <small id="msg-count"></small></h2>
+        <div id="guestbook-messages" class="guestbook-entries">
+          <p class="loading">loading messages...</p>
         </div>
-        <div id="gb-pagination" class="gb-pagination"></div>
+        <div class="guestbook-pagination" id="gb-pagination"></div>
       </section>
     </main>
   </div>
@@ -100,17 +90,17 @@
   <hr class="rainbow-divider" />
 
   <footer class="site-footer">
-    <div class="footer-ascii" aria-hidden="true">*  . * .  *</div>
+    <div class="footer-ascii" aria-hidden="true">. * . * .</div>
     <div class="webring">
-      &#8592; <a href="#">Prev</a> &bull;
-      <a href="#">Webring</a> &bull;
-      <a href="#">Next</a> &#8594;
+      &larr; <a href="#">prev</a> &middot;
+      <a href="#">webring</a> &middot;
+      <a href="#">next</a> &rarr;
     </div>
     <div class="hit-counter">
       visitors: <span class="counter-display" id="hit-counter">000000</span>
     </div>
     <p><small>&copy; <span id="year"></span> notyet</small></p>
-    <p class="footer-note">best viewed at 1024&times;768 with your heart open</p>
+    <p class="footer-note">best viewed at 1024x768 with your heart open</p>
   </footer>
 
   <script src="script.js" defer></script>

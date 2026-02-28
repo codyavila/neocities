@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog | notyet</title>
+  <title>blog | notyet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Lora:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;600&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,21 +14,22 @@
 
   <div class="marquee-wrap" aria-hidden="true">
     <span class="marquee-text">
-      ~*~ the notyet blog ~*~ devlog + personal ~*~ thoughts from the shade ~*~ building and being ~*~
+      ~*~ blog ~*~ thoughts and things ~*~ notes from the process ~*~ small observations ~*~
     </span>
   </div>
 
   <header class="site-header">
-    <h1 class="site-title">blog</h1>
-    <p class="tagline">devlog entries, personal thoughts, and everything in between</p>
+    <h1 class="site-title" data-text="blog">blog</h1>
+    <p class="tagline">thoughts, process notes, and small observations</p>
     <p class="header-divider">- - * - -</p>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="blog.html" aria-current="page">Blog</a>
-      <a href="game.html">Game</a>
+      <a href="index.html">home</a>
+      <a href="about.html">about</a>
+      <a href="blog.html" aria-current="page">blog</a>
+      <a href="game.html">game</a>
+      <a href="guestbook.html">guestbook</a>
     </nav>
-    <p class="status-line"><span>Posts:</span><span>0</span></p>
+    <p class="status-line"><span>posts:</span><span>1</span></p>
   </header>
 
   <hr class="rainbow-divider" />
@@ -36,79 +37,78 @@
   <div class="layout">
     <aside class="sidebar">
       <div class="sidebar-box">
-        <div class="sidebar-title">&#9733; About Me</div>
-        <p>I'm notyet. Indie dev, story lover, bug village architect.</p>
-      </div>
-
-      <div class="sidebar-box">
-        <div class="sidebar-title">Navigate</div>
+        <div class="sidebar-title">categories</div>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="guestbook.html">Guestbook</a></li>
-          <li><a href="game.html">Game Hub</a></li>
-          <li><a href="devlog.html">Devlog</a></li>
-          <li><a href="lore.html">Lore</a></li>
+          <li><a href="#">all posts</a></li>
+          <li><a href="#">process</a></li>
+          <li><a href="#">thoughts</a></li>
+          <li><a href="#">the web</a></li>
         </ul>
       </div>
 
       <div class="sidebar-box">
-        <div class="sidebar-title">Badges</div>
-        <div class="badge-grid">
-          <span class="badge badge-cyan">notyet</span>
-          <span class="badge badge-amber">indie dev</span>
-          <span class="badge badge-magenta">story first</span>
-          <span class="badge badge-green">WIP</span>
-        </div>
+        <div class="sidebar-title">navigate</div>
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="game.html">game hub</a></li>
+          <li><a href="guestbook.html">guestbook</a></li>
+        </ul>
       </div>
 
       <div class="sidebar-box">
-        <button id="theme-toggle" class="theme-toggle" type="button">&#9734; let the sun in</button>
+        <button id="theme-toggle" class="theme-toggle" type="button">lights on</button>
       </div>
     </aside>
 
     <main class="content">
-      <section class="card">
-        <h2>Welcome to the Blog</h2>
+      <section class="card fade-in">
+        <h2 data-scramble>why neocities?</h2>
+        <p class="post-date">first post</p>
         <p>
-          This is where devlog entries and personal posts live together.
-          Game stuff, life stuff, process stuff &mdash; it's all here,
-          tangled up the way it actually happens.
+          I wanted a place that felt like mine. Not a profile on someone
+          else's platform. Not a feed that disappears. Something I could
+          build by hand and come back to.
         </p>
         <p>
-          New posts will show up below, newest first.
+          Neocities reminded me of the old web &mdash; when every site felt
+          like walking into someone's room. You could tell what they cared
+          about by the colors they picked and the things they linked to.
+        </p>
+        <p>
+          That's what I want this to be. A room. <span class="redacted">My room</span>. You're welcome
+          to look around.
         </p>
       </section>
 
-      <!-- ====== POSTS GO BELOW ====== -->
-      <!-- Copy this template for each new post:
+      <div class="pull-quote fade-in">the web used to feel like a neighborhood</div>
 
-      <section class="card">
-        <h2>Post Title</h2>
-        <p class="post-date">MM.DD.YYYY</p>
-        <p>Your content here.</p>
+      <section class="card accent-amber fade-in" style="opacity:.6;border-style:dotted;">
+        <h2>post template</h2>
+        <p class="post-date">date: tbd</p>
+        <p>
+          <em>This is a placeholder for future posts. When I write something
+          new, it'll go here. For now, it's just an empty page with a
+          promise.</em>
+        </p>
       </section>
-
-      -->
-
     </main>
   </div>
 
   <hr class="rainbow-divider" />
 
   <footer class="site-footer">
-    <div class="footer-ascii" aria-hidden="true">*  . * .  *</div>
+    <div class="footer-ascii" aria-hidden="true">. * . * .</div>
     <div class="webring">
-      &#8592; <a href="#">Prev</a> &bull;
-      <a href="#">Webring</a> &bull;
-      <a href="#">Next</a> &#8594;
+      &larr; <a href="#">prev</a> &middot;
+      <a href="#">webring</a> &middot;
+      <a href="#">next</a> &rarr;
     </div>
     <div class="hit-counter">
       visitors: <span class="counter-display" id="hit-counter">000000</span>
     </div>
     <p><small>&copy; <span id="year"></span> notyet</small></p>
-    <p class="footer-note">best viewed at 1024&times;768 with your heart open</p>
+    <p class="footer-note">best viewed at 1024x768 with your heart open</p>
   </footer>
 
   <script src="script.js" defer></script>

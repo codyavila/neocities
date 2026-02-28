@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lore | Game | notyet</title>
+  <title>lore fragments | notyet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Lora:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;600&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,21 +14,22 @@
 
   <div class="marquee-wrap" aria-hidden="true">
     <span class="marquee-text">
-      ~*~ lore archive ~*~ fragments from the tunnels and towers in the grass ~*~ the bugs built a world around avoiding the sun ~*~ sophie wandered in ~*~
+      ~*~ lore fragments ~*~ pieces of the world ~*~ not everything is meant to be read in order ~*~
     </span>
   </div>
 
   <header class="site-header">
-    <h1 class="site-title">lore archive</h1>
-    <p class="tagline">fragments from the shade beneath Sophie's backyard, collected by notyet</p>
+    <h1 class="site-title" data-text="lore fragments">lore fragments</h1>
+    <p class="tagline">scattered pieces of the world of sophie stops the sun</p>
     <p class="header-divider">- - * - -</p>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="game.html" aria-current="page">Game</a>
+      <a href="index.html">home</a>
+      <a href="about.html">about</a>
+      <a href="blog.html">blog</a>
+      <a href="game.html">game</a>
+      <a href="guestbook.html">guestbook</a>
     </nav>
-    <p class="status-line"><span>Archive:</span><span>Field Notes</span></p>
+    <p class="status-line"><span>fragments:</span><span>7</span></p>
   </header>
 
   <hr class="rainbow-divider" />
@@ -36,103 +37,115 @@
   <div class="layout">
     <aside class="sidebar">
       <div class="sidebar-box">
-        <div class="sidebar-title">&#9733; About Me</div>
-        <p>I'm notyet. Indie dev, story lover, bug village architect.</p>
-      </div>
-
-      <div class="sidebar-box">
-        <div class="sidebar-title">Game Nav</div>
+        <div class="sidebar-title">game links</div>
         <ul>
-          <li><a href="game.html">Overview</a></li>
-          <li><a href="devlog.html">Devlog</a></li>
-          <li><a href="lore.html">Lore Archive</a></li>
+          <li><a href="game.html">game hub</a></li>
+          <li><a href="devlog.html">devlog</a></li>
+          <li><a href="lore.html">lore fragments</a></li>
         </ul>
       </div>
 
       <div class="sidebar-box">
-        <div class="sidebar-title">Badges</div>
-        <div class="badge-grid">
-          <span class="badge badge-cyan">notyet</span>
-          <span class="badge badge-amber">indie dev</span>
-          <span class="badge badge-magenta">story first</span>
-          <span class="badge badge-green">WIP</span>
-        </div>
+        <div class="sidebar-title">reading note</div>
+        <p style="font-style:italic;font-size:.9rem;margin:.4rem 0;">
+          these don't have to be read in order. they're pieces &mdash; like finding
+          someone's notes scattered on the floor.
+        </p>
       </div>
 
       <div class="sidebar-box">
-        <div class="sidebar-title">Navigate</div>
+        <div class="sidebar-title">navigate</div>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="game.html">Game Hub</a></li>
+          <li><a href="index.html">home</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="blog.html">blog</a></li>
+          <li><a href="guestbook.html">guestbook</a></li>
         </ul>
       </div>
 
       <div class="sidebar-box">
-        <button id="theme-toggle" class="theme-toggle" type="button">&#9734; let the sun in</button>
+        <button id="theme-toggle" class="theme-toggle" type="button">lights on</button>
       </div>
     </aside>
 
     <main class="content">
-      <section class="card">
-        <h2>Fragment 01 &mdash; The Deal</h2>
+      <div class="pull-quote fade-in">not everything is meant to be read in order</div>
+
+      <section class="card fade-in">
+        <h2 data-scramble>fragment i &mdash; the deal</h2>
+        <p class="journal-note">
+          "Don't set," Sophie whispered to the sun. "If you don't set,
+          tomorrow won't come. And if tomorrow doesn't come, I don't
+          have to leave."
+        </p>
+        <p>The sun, which had been listening to children for longer than
+          anyone remembers, paused at the horizon. And <span class="redacted">stayed</span>.</p>
+      </section>
+
+      <section class="card accent-amber fade-in">
+        <h2 data-scramble>fragment ii &mdash; the first long hour</h2>
         <p>
-          She said: "If I win, tomorrow doesn't come."<br />
-          The sun said nothing. It just started counting.
+          The shadows stopped moving at 7:42 PM. Nobody noticed at first.
+          The adults were busy with boxes and tape. Sophie sat on the porch
+          and watched the light hold perfectly still.
+        </p>
+        <p class="journal-note">"It worked," she thought. "It actually worked."</p>
+      </section>
+
+      <section class="card accent-magenta fade-in">
+        <h2 data-scramble>fragment iii &mdash; the bugs notice</h2>
+        <p>
+          In the tall grass behind the house, the evening shift never
+          came. The nocturnal beetles waited in their tunnels. The
+          fireflies kept their lights off &mdash; what's the point of
+          glowing when the sky won't darken?
         </p>
       </section>
 
-      <section class="card accent-amber">
-        <h2>Fragment 02 &mdash; The Loud Hour</h2>
+      <section class="card accent-green fade-in">
+        <h2 data-scramble>fragment iv &mdash; the sun remembers</h2>
+        <p class="journal-note">
+          The sun has made deals before. With a farmer who wanted one
+          more day of harvest. With a sailor who needed to reach shore.
+          With a mother who <span class="redacted">wasn't ready</span>.
+        </p>
+        <p>They all eventually ask to be released from the deal. The sun is patient.</p>
+      </section>
+
+      <section class="card accent-lavender fade-in">
+        <h2 data-scramble>fragment v &mdash; the council of gnats</h2>
         <p>
-          The bugs call sunrise "the loud hour." They say the light makes
-          shadows brittle and names fall off things. Nobody goes outside
-          during the loud hour. Nobody has for a long, long time.
+          The gnats held an emergency session above the birdbath. The
+          agenda had one item: <em>"Why is it still daytime?"</em>
+        </p>
+        <p>
+          No consensus was reached. The meeting was adjourned when a
+          sparrow showed up. The gnats agreed to reconvene at dusk &mdash;
+          whenever that might be.
         </p>
       </section>
 
-      <section class="card accent-magenta">
-        <h2>Fragment 03 &mdash; Tiny Architecture</h2>
+      <section class="card accent-sky fade-in">
+        <h2 data-scramble>fragment vi &mdash; sophie's room</h2>
         <p>
-          Tunnels. Towers. Whole neighborhoods made of bottle caps and thread.
-          At the top of the tallest tower was a sign: "DO NOT LOOK EAST."
-          Sophie looked east anyway. There was nothing there yet.
+          Her room was half-packed. Boxes labeled in her mom's
+          handwriting: <em>Sophie &mdash; Books</em>, <em>Sophie &mdash; Stuffed
+          Animals</em>, <em>Sophie &mdash; Misc</em>.
+        </p>
+        <p>
+          She'd unpacked the Misc box twice already. Her mom had stopped
+          re-packing it.
         </p>
       </section>
 
-      <section class="card accent-pink">
-        <h2>Fragment 04 &mdash; The Elder's Warning</h2>
+      <section class="card accent-rust fade-in">
+        <h2 data-scramble>fragment vii &mdash; what grows in endless light</h2>
         <p>
-          "The sun doesn't want to hurt you," the eldest bug said.
-          "It just doesn't know how to be gentle." He paused.
-          "Neither does tomorrow."
+          The sunflowers in Mrs. Patterson's garden didn't know what to do.
+          They'd been facing east, waiting for a sunrise that would never
+          come again. Slowly, they started turning toward <span class="redacted">Sophie's house</span>.
         </p>
-      </section>
-
-      <section class="card accent-green">
-        <h2>Fragment 05 &mdash; Tomorrow at the Fence</h2>
-        <p>
-          Tomorrow stood at the fence line all night, waiting to be invited in.
-          Sophie pretended not to see it. The bugs pretended harder.
-        </p>
-      </section>
-
-      <section class="card">
-        <h2>Fragment 06 &mdash; Sophie's Notebook</h2>
-        <p>
-          Found scrawled on the last page, in crayon:
-          <em>"New school. New house. New everything. I want none of it.
-          If I stay very still, maybe today won't end."</em>
-        </p>
-      </section>
-
-      <section class="card accent-amber">
-        <h2>Fragment 07 &mdash; Beautiful in the Shade</h2>
-        <p>
-          They built something beautiful down here. All of it in the shade,
-          all of it afraid, and all of it still growing. Sophie sat in the
-          middle of it and thought: <em>maybe I can too.</em>
-        </p>
+        <p class="journal-note">"Even the flowers know who did this."</p>
       </section>
     </main>
   </div>
@@ -140,17 +153,17 @@
   <hr class="rainbow-divider" />
 
   <footer class="site-footer">
-    <div class="footer-ascii" aria-hidden="true">*  . * .  *</div>
+    <div class="footer-ascii" aria-hidden="true">. * . * .</div>
     <div class="webring">
-      &#8592; <a href="#">Prev</a> &bull;
-      <a href="#">Webring</a> &bull;
-      <a href="#">Next</a> &#8594;
+      &larr; <a href="#">prev</a> &middot;
+      <a href="#">webring</a> &middot;
+      <a href="#">next</a> &rarr;
     </div>
     <div class="hit-counter">
       visitors: <span class="counter-display" id="hit-counter">000000</span>
     </div>
     <p><small>&copy; <span id="year"></span> notyet</small></p>
-    <p class="footer-note">best viewed at 1024&times;768 with your heart open</p>
+    <p class="footer-note">best viewed at 1024x768 with your heart open</p>
   </footer>
 
   <script src="script.js" defer></script>

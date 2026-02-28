@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Devlog | Game | notyet</title>
+  <title>devlog | notyet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Lora:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;600&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,21 +14,22 @@
 
   <div class="marquee-wrap" aria-hidden="true">
     <span class="marquee-text">
-      ~*~ devlog ~*~ build notes from sophie stops the sun ~*~ she made a deal with the sun and it worked ~*~ now there are bugs ~*~
+      ~*~ devlog ~*~ building in the open ~*~ notes from the workshop ~*~ things that don't work yet ~*~
     </span>
   </div>
 
   <header class="site-header">
-    <h1 class="site-title">devlog :: sophie stops the sun</h1>
-    <p class="tagline">build notes from Sophie Stops the Sun by notyet</p>
+    <h1 class="site-title" data-text="devlog">devlog</h1>
+    <p class="tagline">build notes for sophie stops the sun</p>
     <p class="header-divider">- - * - -</p>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="game.html" aria-current="page">Game</a>
+      <a href="index.html">home</a>
+      <a href="about.html">about</a>
+      <a href="blog.html">blog</a>
+      <a href="game.html">game</a>
+      <a href="guestbook.html">guestbook</a>
     </nav>
-    <p class="status-line"><span>Build:</span><span>0.1.0</span></p>
+    <p class="status-line"><span>entries:</span><span>3</span></p>
   </header>
 
   <hr class="rainbow-divider" />
@@ -36,68 +37,79 @@
   <div class="layout">
     <aside class="sidebar">
       <div class="sidebar-box">
-        <div class="sidebar-title">&#9733; About Me</div>
-        <p>I'm notyet. Indie dev, story lover, bug village architect.</p>
-      </div>
-
-      <div class="sidebar-box">
-        <div class="sidebar-title">Game Nav</div>
+        <div class="sidebar-title">game links</div>
         <ul>
-          <li><a href="game.html">Overview</a></li>
-          <li><a href="devlog.html">Devlog</a></li>
-          <li><a href="lore.html">Lore Archive</a></li>
+          <li><a href="game.html">game hub</a></li>
+          <li><a href="devlog.html">devlog</a></li>
+          <li><a href="lore.html">lore fragments</a></li>
         </ul>
       </div>
 
       <div class="sidebar-box">
-        <div class="sidebar-title">Badges</div>
-        <div class="badge-grid">
-          <span class="badge badge-cyan">notyet</span>
-          <span class="badge badge-amber">indie dev</span>
-          <span class="badge badge-magenta">story first</span>
-          <span class="badge badge-green">WIP</span>
-        </div>
-      </div>
-
-      <div class="sidebar-box">
-        <div class="sidebar-title">Navigate</div>
+        <div class="sidebar-title">navigate</div>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="game.html">Game Hub</a></li>
+          <li><a href="index.html">home</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="blog.html">blog</a></li>
+          <li><a href="guestbook.html">guestbook</a></li>
         </ul>
       </div>
 
       <div class="sidebar-box">
-        <button id="theme-toggle" class="theme-toggle" type="button">&#9734; let the sun in</button>
+        <button id="theme-toggle" class="theme-toggle" type="button">lights on</button>
       </div>
     </aside>
 
     <main class="content">
-      <section class="card">
-        <h2>Current Goal</h2>
-        <p><em>Nothing here yet.</em></p>
+      <div class="pull-quote fade-in">building in the open, breaking things on purpose</div>
+
+      <section class="card fade-in">
+        <h2 data-scramble>entry #3 &mdash; figuring out the bugs</h2>
+        <p class="post-date">date: tbd</p>
+        <p>
+          The bug civilization is the part I keep coming back to. How do you
+          build a culture that feels real when your characters are
+          three millimeters tall?
+        </p>
+        <p>
+          I've been sketching out social structures &mdash; the way they
+          organize around light sources now that Sophie stopped the sun.
+          Some bugs worship the eternal day. Others are building <span class="redacted">shelters
+          to simulate night</span>.
+        </p>
+        <p class="journal-note">"they didn't choose this world. but they're making something of it."</p>
       </section>
 
-      <section class="card accent-amber">
-        <h2>Build Log</h2>
-        <ul class="updates">
-        </ul>
+      <section class="card accent-amber fade-in">
+        <h2 data-scramble>entry #2 &mdash; tone and feeling</h2>
+        <p class="post-date">date: tbd</p>
+        <p>
+          Figured out the tone I want: it should feel like the last day of
+          summer. That specific ache when you know something good is ending
+          and you can't do anything about it.
+        </p>
+        <p>
+          The game needs to be warm even when it's sad. Sunlight through
+          curtains, not rain on windows.
+        </p>
       </section>
 
-      <section class="card accent-magenta">
-        <h2>Next Tasks</h2>
+      <section class="card accent-magenta fade-in">
+        <h2 data-scramble>entry #1 &mdash; the beginning</h2>
+        <p class="post-date">date: tbd</p>
+        <p>
+          Started working on Sophie Stops the Sun. The core idea: a girl makes
+          a deal with the sun to stop it from setting, because if tomorrow
+          comes, she has to move away. The sun agrees.
+        </p>
+        <p>
+          Now I need to figure out what happens next. What does a world with
+          no night look like? What grows in <span class="redacted">endless light</span>?
+        </p>
         <ul class="updates">
-        </ul>
-      </section>
-
-      <section class="card accent-green">
-        <h2>Inspiration Board</h2>
-        <ul class="updates">
-          <li>Undertale &mdash; heartfelt writing and player empathy</li>
-          <li>EarthBound &mdash; weird charm and emotional sincerity</li>
-          <li>Omori &mdash; dream logic and quiet dread</li>
-          <li>James and the Giant Peach &mdash; tiny world, giant feelings</li>
+          <li>Core concept locked in</li>
+          <li>Bug civilization idea emerging</li>
+          <li>Need to decide on engine</li>
         </ul>
       </section>
     </main>
@@ -106,17 +118,17 @@
   <hr class="rainbow-divider" />
 
   <footer class="site-footer">
-    <div class="footer-ascii" aria-hidden="true">*  . * .  *</div>
+    <div class="footer-ascii" aria-hidden="true">. * . * .</div>
     <div class="webring">
-      &#8592; <a href="#">Prev</a> &bull;
-      <a href="#">Webring</a> &bull;
-      <a href="#">Next</a> &#8594;
+      &larr; <a href="#">prev</a> &middot;
+      <a href="#">webring</a> &middot;
+      <a href="#">next</a> &rarr;
     </div>
     <div class="hit-counter">
       visitors: <span class="counter-display" id="hit-counter">000000</span>
     </div>
     <p><small>&copy; <span id="year"></span> notyet</small></p>
-    <p class="footer-note">best viewed at 1024&times;768 with your heart open</p>
+    <p class="footer-note">best viewed at 1024x768 with your heart open</p>
   </footer>
 
   <script src="script.js" defer></script>

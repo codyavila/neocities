@@ -6,7 +6,7 @@
   <title>notyet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Lora:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;600&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,21 +14,26 @@
 
   <div class="marquee-wrap" aria-hidden="true">
     <span class="marquee-text">
-      ~*~ welcome to notyet's corner of the web ~*~ sophie stops the sun ~*~ she made a deal. the sun agreed to play. ~*~ if she hides long enough, maybe tomorrow forgets to show up ~*~ best viewed with your heart open ~*~
+      ~*~ welcome to notyet's corner of the web ~*~ sophie stops the sun ~*~ she made a deal and the sun agreed to play ~*~ if she hides long enough, maybe tomorrow forgets to show up ~*~ best viewed with your heart open ~*~
     </span>
   </div>
 
   <header class="site-header">
-    <h1 class="site-title">&#9734; notyet &#9734;</h1>
-    <p class="tagline">personal site &bull; project notes &bull; creative experiments</p>
+    <div class="hero-ascii" aria-hidden="true">
+        .  *        .    *
+    *       .    *        .
+       .        .     *      .
+    </div>
+    <h1 class="site-title" data-text="notyet">notyet</h1>
+    <p class="tagline">personal site &middot; indie dev &middot; creative experiments</p>
     <p class="header-divider">- - * - -</p>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="game.html">Game</a>
+      <a href="index.html" aria-current="page">home</a>
+      <a href="about.html">about</a>
+      <a href="blog.html">blog</a>
+      <a href="game.html">game</a>
+      <a href="guestbook.html">guestbook</a>
     </nav>
-    <p class="status-line"><span>Status:</span><span>building...</span></p>
   </header>
 
   <hr class="rainbow-divider" />
@@ -36,12 +41,22 @@
   <div class="layout">
     <aside class="sidebar">
       <div class="sidebar-box">
-        <div class="sidebar-title">&#9733; About Me</div>
+        <div class="sidebar-title">about me</div>
         <p>I'm notyet. Indie dev, story lover, bug village architect. Welcome to my site.</p>
       </div>
 
       <div class="sidebar-box">
-        <div class="sidebar-title">Badges</div>
+        <div class="sidebar-title">now</div>
+        <ul>
+          <li>Making: Sophie Stops the Sun</li>
+          <li>Learning: narrative design</li>
+          <li>Playing: ...</li>
+          <li>Listening: ...</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-title">badges</div>
         <div class="badge-grid">
           <span class="badge badge-cyan">notyet</span>
           <span class="badge badge-amber">indie dev</span>
@@ -52,41 +67,31 @@
       </div>
 
       <div class="sidebar-box">
-        <div class="sidebar-title">Now</div>
+        <div class="sidebar-title">navigate</div>
         <ul>
-          <li>Making: Sophie Stops the Sun</li>
-          <li>Learning: narrative design</li>
-          <li>Playing: ...</li>
-          <li>Listening: ...</li>
-        </ul>
-      </div>
-
-      <div class="sidebar-box">
-        <div class="sidebar-title">Navigate</div>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="guestbook.html">Guestbook</a></li>
-          <li><a href="game.html">Game Hub</a></li>
-          <li><a href="devlog.html">Devlog</a></li>
-          <li><a href="lore.html">Lore</a></li>
+          <li><a href="index.html">home</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="blog.html">blog</a></li>
+          <li><a href="guestbook.html">guestbook</a></li>
+          <li><a href="game.html">game hub</a></li>
+          <li><a href="devlog.html">devlog</a></li>
+          <li><a href="lore.html">lore</a></li>
         </ul>
       </div>
 
       <div class="sidebar-box under-construction">
-        <div class="sidebar-title">&#9888; Status</div>
+        <div class="sidebar-title">status</div>
         <p>Forever under construction. That's the point.</p>
       </div>
 
       <div class="sidebar-box">
-        <button id="theme-toggle" class="theme-toggle" type="button">&#9734; let the sun in</button>
+        <button id="theme-toggle" class="theme-toggle" type="button">lights on</button>
       </div>
     </aside>
 
     <main class="content">
-      <section class="card">
-        <h2>Hello, Visitor</h2>
+      <section class="card fade-in">
+        <h2 data-scramble>hello, visitor</h2>
         <p>
           I'm notyet. This site is mainly about me, what I'm making, and where
           my projects are currently headed.
@@ -97,50 +102,78 @@
         </p>
       </section>
 
-      <section class="card accent-amber">
-        <h2>Current Project</h2>
+      <div class="pull-quote fade-in">somewhere between goodbye and not yet</div>
+
+      <section class="card accent-amber fade-in">
+        <h2 data-scramble>current project</h2>
         <p>
           I'm building <strong>Sophie Stops the Sun</strong>. Sophie is moving tomorrow &mdash;
           new school, new house, new everything. She wants none of it. So she
           makes a deal with the sun: a game of hide and seek. If she hides long
-          enough, maybe tomorrow just... forgets to show up.
+          enough, maybe tomorrow just&hellip; forgets to show up.
         </p>
         <p>
           While she's been hiding, a whole civilization of bugs has grown in
           the grass around her. They're afraid of the sun too. And somewhere
-          in their world, Sophie starts to wonder if saying goodbye doesn't
-          have to mean losing everything.
+          in their world, Sophie starts to wonder if <span class="redacted">saying goodbye doesn't
+          have to mean losing everything</span>.
         </p>
-        <p><a href="game.html">Enter the Game Hub &rarr;</a></p>
+        <p><a href="game.html">enter the game hub &rarr;</a></p>
       </section>
 
-      <section class="card accent-magenta">
-        <h2>Site Map</h2>
-        <ul class="updates">
-          <li><a href="about.html">About</a> &mdash; who I am, what this is</li>
-          <li><a href="game.html">Game</a> &mdash; project hub for Sophie Stops the Sun</li>
-          <li><a href="devlog.html">Devlog</a> &mdash; build notes and progress</li>
-          <li><a href="lore.html">Lore</a> &mdash; fragments from the tunnels and towers in the grass</li>
-        </ul>
+      <section class="card accent-magenta fade-in">
+        <h2 data-scramble>look around</h2>
+        <div class="quick-nav">
+          <a href="about.html" class="quick-nav-item">
+            <span class="quick-nav-icon">/</span>
+            <span class="quick-nav-label">about</span>
+            <span class="quick-nav-desc">who I am, what this is</span>
+          </a>
+          <a href="game.html" class="quick-nav-item">
+            <span class="quick-nav-icon">/</span>
+            <span class="quick-nav-label">game</span>
+            <span class="quick-nav-desc">Sophie Stops the Sun</span>
+          </a>
+          <a href="devlog.html" class="quick-nav-item">
+            <span class="quick-nav-icon">/</span>
+            <span class="quick-nav-label">devlog</span>
+            <span class="quick-nav-desc">build notes</span>
+          </a>
+          <a href="lore.html" class="quick-nav-item">
+            <span class="quick-nav-icon">/</span>
+            <span class="quick-nav-label">lore</span>
+            <span class="quick-nav-desc">fragments from the shade</span>
+          </a>
+          <a href="blog.html" class="quick-nav-item">
+            <span class="quick-nav-icon">/</span>
+            <span class="quick-nav-label">blog</span>
+            <span class="quick-nav-desc">thoughts &amp; updates</span>
+          </a>
+          <a href="guestbook.html" class="quick-nav-item">
+            <span class="quick-nav-icon">/</span>
+            <span class="quick-nav-label">guestbook</span>
+            <span class="quick-nav-desc">leave a note</span>
+          </a>
+        </div>
       </section>
 
-      <section class="card accent-green">
-        <h2>Guestbook</h2>
+      <section class="card accent-green fade-in">
+        <h2 data-scramble>guestbook</h2>
         <p>
           Leave a note, say hi, or tell me something strange.
           Every message gets read.
         </p>
         <form id="guestbook-form" class="gb-form" autocomplete="off">
           <div class="gb-field">
-            <label for="gb-name">Name</label>
+            <label for="gb-name">name</label>
             <input type="text" id="gb-name" name="name" maxlength="40" placeholder="your name or alias" required />
           </div>
           <div class="gb-field">
-            <label for="gb-message">Message</label>
+            <label for="gb-message">message</label>
             <textarea id="gb-message" name="message" maxlength="500" rows="3" placeholder="say something..." required></textarea>
           </div>
           <div class="gb-field gb-actions">
-            <button type="submit" class="gb-submit">Leave a note</button>
+            <button type="submit" class="gb-submit">leave a note</button>
             <span id="gb-status" class="gb-status"></span>
           </div>
         </form>
@@ -153,17 +186,17 @@
   <hr class="rainbow-divider" />
 
   <footer class="site-footer">
-    <div class="footer-ascii" aria-hidden="true">*  . * .  *</div>
+    <div class="footer-ascii" aria-hidden="true">. * . * .</div>
     <div class="webring">
-      &#8592; <a href="#">Prev</a> &bull;
-      <a href="#">Webring</a> &bull;
-      <a href="#">Next</a> &#8594;
+      &larr; <a href="#">prev</a> &middot;
+      <a href="#">webring</a> &middot;
+      <a href="#">next</a> &rarr;
     </div>
     <div class="hit-counter">
       visitors: <span class="counter-display" id="hit-counter">000000</span>
     </div>
     <p><small>&copy; <span id="year"></span> notyet</small></p>
-    <p class="footer-note">best viewed at 1024&times;768 with your heart open</p>
+    <p class="footer-note">best viewed at 1024x768 with your heart open</p>
   </footer>
 
   <script src="script.js" defer></script>

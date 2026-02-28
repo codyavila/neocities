@@ -3,89 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 | lost in the grass</title>
+  <title>lost | notyet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Lora:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;600&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="stars" aria-hidden="true"></div>
 
-  <div class="marquee-wrap" aria-hidden="true">
-    <span class="marquee-text">
-      ~*~ you found the lost zone ~*~ this page has been swallowed by the tall grass ~*~ sophie can't help you here ~*~ go back home ~*~
-    </span>
-  </div>
-
   <header class="site-header">
-    <h1 class="site-title">404 :: lost in the grass</h1>
-    <p class="tagline">this page could not be found</p>
+    <h1 class="site-title" data-text="you're lost">you're lost</h1>
+    <p class="tagline">this page doesn't exist &mdash; but that's okay</p>
     <p class="header-divider">- - ? - -</p>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="game.html">Game</a>
+      <a href="index.html">home</a>
+      <a href="about.html">about</a>
+      <a href="blog.html">blog</a>
+      <a href="game.html">game</a>
+      <a href="guestbook.html">guestbook</a>
     </nav>
   </header>
 
   <hr class="rainbow-divider" />
 
   <div class="layout">
-    <aside class="sidebar">
-      <div class="sidebar-box">
-        <div class="sidebar-title">&#9733; About Me</div>
-        <p>I'm notyet. Indie dev, story lover, bug village architect.</p>
-      </div>
+    <main class="content" style="max-width:640px;margin:0 auto;">
+      <div class="pull-quote fade-in">404</div>
 
-      <div class="sidebar-box">
-        <div class="sidebar-title">Navigate</div>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="guestbook.html">Guestbook</a></li>
-          <li><a href="game.html">Game Hub</a></li>
-          <li><a href="devlog.html">Devlog</a></li>
-          <li><a href="lore.html">Lore</a></li>
-        </ul>
-      </div>
-
-      <div class="sidebar-box">
-        <button id="theme-toggle" class="theme-toggle" type="button">&#9734; let the sun in</button>
-      </div>
-    </aside>
-
-    <main class="content">
-      <section class="card">
-        <h2>You Wandered Too Far</h2>
+      <section class="card fade-in" style="text-align:center;">
+        <h2 data-scramble>nothing here</h2>
         <p>
-          The page you're looking for doesn't exist. Maybe it never did.
-          Maybe the bugs moved it underground.
+          you wandered off the path. it happens. the bugs do it all the
+          time &mdash; they usually find something interesting.
         </p>
-        <p>
-          The tall grass is quiet here. Nothing to find but the sound of wind
-          and the feeling that something important was nearby, once.
+        <p class="journal-note">
+          "not all who wander are lost. but you <span class="redacted">might be</span>."
+        </p>
+        <p style="margin-top:1.5rem;">
+          <a href="index.html" class="btn">&larr; go home</a>
         </p>
       </section>
 
-      <section class="card accent-amber">
-        <h2>Try These Instead</h2>
-        <ul class="updates">
-          <li><a href="index.html">Go back home</a></li>
-          <li><a href="game.html">Visit the game hub</a></li>
-          <li><a href="lore.html">Read something strange</a></li>
+      <section class="card accent-amber fade-in" style="text-align:center;">
+        <h2 data-scramble>maybe try one of these?</h2>
+        <ul class="updates" style="text-align:left;display:inline-block;">
+          <li><a href="index.html">home</a> &mdash; the front door</li>
+          <li><a href="about.html">about</a> &mdash; who is this person</li>
+          <li><a href="game.html">game</a> &mdash; sophie stops the sun</li>
+          <li><a href="blog.html">blog</a> &mdash; thoughts and things</li>
+          <li><a href="guestbook.html">guestbook</a> &mdash; leave a note</li>
+          <li><a href="lore.html">lore</a> &mdash; fragments of the world</li>
         </ul>
-      </section>
-
-      <section class="card accent-magenta">
-        <h2>Error Details</h2>
-        <p>
-          <strong>Code:</strong> 404<br />
-          <strong>Translation:</strong> The bugs don't know this address.<br />
-          <strong>Advice:</strong> Check the URL or just go home.
-        </p>
       </section>
     </main>
   </div>
@@ -93,17 +62,12 @@
   <hr class="rainbow-divider" />
 
   <footer class="site-footer">
-    <div class="footer-ascii" aria-hidden="true">*  . * .  *</div>
-    <div class="webring">
-      &#8592; <a href="#">Prev</a> &bull;
-      <a href="#">Webring</a> &bull;
-      <a href="#">Next</a> &#8594;
-    </div>
+    <div class="footer-ascii" aria-hidden="true">. ? . ? .</div>
     <div class="hit-counter">
       visitors: <span class="counter-display" id="hit-counter">000000</span>
     </div>
     <p><small>&copy; <span id="year"></span> notyet</small></p>
-    <p class="footer-note">best viewed at 1024&times;768 with your heart open</p>
+    <p class="footer-note">best viewed at 1024x768 with your heart open</p>
   </footer>
 
   <script src="script.js" defer></script>

@@ -1,0 +1,10 @@
+name = "notyet-guestbook"
+main = "src/worker.js"
+compatibility_date = "2024-01-01"
+
+# After running: wrangler d1 create notyet-guestbook
+# Paste the database_id below
+[[d1_databases]]
+binding = "DB"
+database_name = "notyet-guestbook"
+database_id = "86140caf-9f18-46bb-a7b0-b5d3fd4f7d49"

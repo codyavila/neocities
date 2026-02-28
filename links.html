@@ -24,7 +24,7 @@
       <a href="game.html">game</a>
       <a href="guestbook.html">guestbook</a>
     </nav>
-    <p class="status-line"><span>bookmarks:</span><span>0</span></p>
+    <p class="status-line"><span>bookmarks:</span><span>11</span></p>
   </header>
 
   <hr class="rainbow-divider" />
@@ -34,10 +34,9 @@
       <div class="sidebar-box">
         <div class="sidebar-title">categories</div>
         <ul>
-          <li>friends</li>
-          <li>inspiration</li>
-          <li>tools</li>
-          <li>webrings</li>
+          <li><a href="#tools">tools I use</a></li>
+          <li><a href="#games">games that inspire me</a></li>
+          <li><a href="#resources">resources / references</a></li>
         </ul>
       </div>
 
@@ -72,16 +71,85 @@
     </aside>
 
     <main class="content">
-      <section class="card fade-in" style="text-align:center;">
-        <h2 data-scramble>nothing here yet</h2>
-        <p>
-          I'm still collecting bookmarks. they're scattered across too many
-          browser tabs right now. they'll end up here eventually.
+
+      <section class="card fade-in" id="tools">
+        <h2 data-scramble>tools I use</h2>
+        <p style="color:var(--ink-dim);font-size:.85rem;margin-bottom:.8rem;">
+          the stuff I actually use to make things.
         </p>
-        <p style="color:var(--ink-dim);font-size:.85rem;margin-top:.5rem;">
-          (wanna trade buttons? leave a note in the <a href="guestbook.html">guestbook</a>)
+        <ul class="link-list">
+          <li>
+            <a href="https://neocities.org" target="_blank" rel="noopener">neocities</a>
+            <span class="link-desc">-- where this site lives. free static hosting with a community that actually cares about the web.</span>
+          </li>
+          <li>
+            <a href="https://godotengine.org" target="_blank" rel="noopener">godot engine</a>
+            <span class="link-desc">-- free and open source game engine. one of the two I'm considering for my game.</span>
+          </li>
+          <li>
+            <a href="https://www.rpgmakerweb.com" target="_blank" rel="noopener">RPG maker</a>
+            <span class="link-desc">-- the other engine I'm considering. classic tool for story-driven RPGs.</span>
+          </li>
+          <li>
+            <a href="https://www.aseprite.org" target="_blank" rel="noopener">aseprite</a>
+            <span class="link-desc">-- pixel art editor. if I end up making sprites, this is where they'll come from.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card fade-in" id="games">
+        <h2 data-scramble>games that inspire me</h2>
+        <p style="color:var(--ink-dim);font-size:.85rem;margin-bottom:.8rem;">
+          games that live in my head and shaped how I think about storytelling.
+        </p>
+        <ul class="link-list">
+          <li>
+            <a href="https://undertale.com" target="_blank" rel="noopener">undertale</a>
+            <span class="link-desc">-- the game that proved you don't need a big studio to make something that changes people. the way it plays with expectations still gets me.</span>
+          </li>
+          <li>
+            <a href="https://en.wikipedia.org/wiki/EarthBound" target="_blank" rel="noopener">earthbound / mother</a>
+            <span class="link-desc">-- weird, warm, funny, sad. the tone I'm chasing for my own game, probably forever.</span>
+          </li>
+          <li>
+            <a href="https://www.omori-game.com" target="_blank" rel="noopener">omori</a>
+            <span class="link-desc">-- proof that a game about difficult feelings can still be beautiful and tender. the art direction alone is incredible.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card fade-in" id="resources">
+        <h2 data-scramble>resources / references</h2>
+        <p style="color:var(--ink-dim);font-size:.85rem;margin-bottom:.8rem;">
+          things I keep coming back to when I'm learning or looking something up.
+        </p>
+        <ul class="link-list">
+          <li>
+            <a href="https://www.spriters-resource.com" target="_blank" rel="noopener">the spriters resource</a>
+            <span class="link-desc">-- massive archive of game sprites. great for studying how pixel art works in practice.</span>
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN web docs</a>
+            <span class="link-desc">-- the only web reference I trust. if I'm confused about CSS or JS, this is where I go first.</span>
+          </li>
+          <li>
+            <a href="https://docs.godotengine.org" target="_blank" rel="noopener">godot docs</a>
+            <span class="link-desc">-- official godot documentation. well-written and actually helpful.</span>
+          </li>
+          <li>
+            <a href="https://lospec.com" target="_blank" rel="noopener">lospec</a>
+            <span class="link-desc">-- pixel art palettes, tutorials, and tools. really good for finding color palettes that work.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card fade-in" style="text-align:center;">
+        <p style="color:var(--ink-dim);font-size:.85rem;">
+          this list will grow. I'm always finding new things.<br/>
+          wanna trade buttons? leave a note in the <a href="guestbook.html">guestbook</a>.
         </p>
       </section>
+
     </main>
   </div>
 
